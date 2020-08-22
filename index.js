@@ -1,21 +1,20 @@
+let installmentsValue = document.querySelector('.installmentsValue').value;
+let totalBidAmount = document.querySelector('.bid-amount').value;
+document.querySelector('.valueInstallments').innerHTML = installmentsValue;
+document.querySelector('.totalDebtAmount').innerHTML = totalBidAmount;
 
 function numberOfInstallments() {
-  const totalBidAmount = document.querySelector('.bid-amount').value;
-  const installmentsValue = document.querySelector('.installments').value;
   const calcNumberOfInstallments = totalBidAmount / installmentsValue;
-  //console.log(parseFloat(calcNumberOfInstallments.toFixed(2)));
-  return parseFloat(calcNumberOfInstallments.toFixed(2))
+  const numberOfInstallments = Math.ceil(calcNumberOfInstallments)
+  dueDate(numberOfInstallments)
+  document.querySelector('.numberInstallments').innerHTML = numberOfInstallments;
 
 }
-
-
+ numberOfInstallments()
 
 
 function dueDate() {
-  const valueDate = document.querySelector('.date').value;
-  const calcDueDate = new Date(valueDate).getMonth() + 2
-  console.log(calcDueDate);
-  return calcDueDate;
+  const valueDate = document.querySelector('.firstDateInstallment').value;
 
 }
-dueDate();
+
