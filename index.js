@@ -1,53 +1,33 @@
 
+
   function numberOfInstallments() {
+
     const installmentsValue = document.querySelector('#installments').value;
     const totalBidAmount = document.querySelector('#bid-amount').value;
+
     const calcNumberOfInstallments = totalBidAmount / installmentsValue;
-    const numberOfInstallments = Math.ceil(calcNumberOfInstallments)
-    dueDate(numberOfInstallments)
+    const numberOfInstallments = Math.ceil(calcNumberOfInstallments);
     document.querySelector('#numberInstallments').innerHTML = numberOfInstallments;
+
     document.getElementById('totalDebtAmount').innerHTML = totalBidAmount;
     document.getElementById('valueInstallments').innerHTML = installmentsValue;
 
+    const duedata = document.getElementById('firstDateInstallment').value;
+    parseDate(duedata)
+
   }
 
-  function dueDate(parcelas) {
-    const valueDate = document.querySelector('#firstDateInstallment').value;
-    parseDate(valueDate, parcelas);
+  function parseDate(date) {
 
+    const dataDigitadaSplit = date.split("-");
+  
+    const day = dataDigitadaSplit[2];
+    const mouth = dataDigitadaSplit[1];
+    const year = dataDigitadaSplit[0];
+    const data =  day + '/' + mouth + '/' + year;
 
-    console.log("data é :" + valueDate);
-    console.log();
-  }
-
-  function parseDate(data, parcelas) {
-    let dataDigitadaSplit = data.split("-");
-
-    let dia = dataDigitadaSplit[2];
-    let mes = dataDigitadaSplit[1];
-    let ano = dataDigitadaSplit[0];
-    ano = parseInt(ano);
-    mes = parseInt(mes)
-
-    if (parcelas >= 12) {
-
-      const anos = Math.floor(parcelas / 12);
-      ano = ano + anos;
-      ano;
-      let meses = parcelas % 12;
-      mes = mes + meses;
-
-      if (mes >= 12) {
-        ano++;
-        mes = mes - 12;
-      }
-
-    } if (parcelas < 12) {
-      mes = mes + parcelas;
-    }
+    document.getElementById('dueDate').innerHTML = data;
     
-    const dataFimpago = new Date(ano, mes, dia);
-    document.getElementById('dueDate').innerHTML = dataFimpago;
   }
 
-
+ 
