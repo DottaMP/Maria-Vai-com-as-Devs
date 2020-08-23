@@ -1,0 +1,46 @@
+*{
+  font-family: 'Roboto', sans-serif;
+  margin:0;
+  padding:0; 
+}
+
+.colorMenu {
+  background-color: #E63888;
+}
+
+.div-hidden {
+  visibility:hidden;
+
+}
+
+ul, li {
+  list-style-type: none;
+  text-align: left;
+  padding:0
+}
+
+.button5 {
+  background-color: #E94F96;
+  border:none;
+  border-radius: 10px;
+  font-size: 15px;
+  width:25vw;
+}
+
+.container-footer {
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.fontetitulos {
+  font-size: 30px;
+}
+
+.fonteMenu {
+  font-size: 25px;
+}
+
+.fontetexto {
+  font-size: 20px;
+}
