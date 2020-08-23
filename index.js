@@ -34,7 +34,7 @@ function numberOfInstallments() {
   let discountCalculation = totalDebtAmount - finalValue;
   let discountPercent = (discountCalculation / totalDebtAmount) * 100;
 
-  document.getElementById('discountPercent').innerHTML = 'R$' + discountCalculation.toFixed(2) + ' ' +  discountPercent.toFixed(2) + '%' 
+  document.getElementById('discountPercent').innerHTML = 'R$' + discountCalculation.toFixed(2) + ' ' + discountPercent.toFixed(2) + '%'
 
   document.getElementById('bid-amount').innerHTML = 'R$' + finalValue.toFixed(2);
   document.getElementById('lastInstallment').innerHTML = 'R$' + lastInstallment.toFixed(2);
