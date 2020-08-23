@@ -36,9 +36,12 @@ function numberOfInstallments() {
 function finalValueCalculator(value, parcela) {
 
   let calcNumberOfInstallments = value / parcela;
-  console.log(calcNumberOfInstallments);
   let numberOfInstallments = Math.ceil(calcNumberOfInstallments);
   let lastInstallment = value - (parcela * (numberOfInstallments - 1));
+
+  const discountCalculation = totalDebtAmount - value;
+  const discountPercent = (discountCalculation / totalDebtAmount) * 100;
+  document.getElementById('discountPercent').innerHTML = discountPercent.toFixed(2) + '%' + discountCalculation;
 
   document.getElementById('bid-amount').innerHTML = 'R$' + value.toFixed(2);
   document.getElementById('lastInstallment').innerHTML = 'R$' + lastInstallment.toFixed(2);
