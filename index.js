@@ -3,50 +3,51 @@ let totalDebtAmount = 26646.50;
 let totalBidAmount = 4372.54;
 document.getElementById('totalDebtAmount').innerHTML = 'R$' + totalDebtAmount;
 
-
 function numberOfInstallments() {
 
   const dueDate = document.getElementById('firstDateInstallment').value;
   dateValidator(dueDate)
   let installmentsValue = document.querySelector('#installments').value;
 
-  finalValueCalculator(totalBidAmount, installmentsValue);
+  let calcNumberOfInstallments = totalBidAmount / installmentsValue;
+  let numberOfInstallments = Math.ceil(calcNumberOfInstallments);
+  console.log("numero de parcelas " + numberOfInstallments);
+  let lastInstallment = totalBidAmount - (installmentsValue * (numberOfInstallments));
 
-  let finalValue;
+  
+  let finalValue = 0;
+
   if (numberOfInstallments == 1) {
     finalValue = totalBidAmount;
-  } else if (2 > numberOfInstallments <= 12) {
-    finalValue = totalBidAmount * 1.1
-  } else if (13 < numberOfInstallments <= 24) {
-    finalValue = totalBidAmount * 1.15
-  } else if (25 < numberOfInstallments <= 36) {
-    finalValue = totalBidAmount * 1.17
-  } else if (37 < numberOfInstallments <= 48) {
-    finalValue = totalBidAmount * 1.2
+  } else if (numberOfInstallments >= 2 & numberOfInstallments <= 3) {
+    finalValue = totalBidAmount * 1.115
+  } else if (numberOfInstallments >= 4 && numberOfInstallments <= 12) {
+    finalValue = totalBidAmount * 1.10
+  } else if (numberOfInstallments >= 13 & numberOfInstallments <= 24) {
+    finalValue = totalBidAmount * 1.075
   } else {
-    finalValue = totalBidAmount * 1.25
+    finalValue = totalBidAmount * 1.055
   };
 
-  finalValueCalculator(finalValue, installmentsValue);
+  calcNumberOfInstallments = finalValue / installmentsValue;
+  numberOfInstallments = Math.ceil(calcNumberOfInstallments);
+  lastInstallment = finalValue - (installmentsValue * (numberOfInstallments - 1));
+
+  let discountCalculation = totalDebtAmount - finalValue;
+  let discountPercent = (discountCalculation / totalDebtAmount) * 100;
+
+  document.getElementById('discountPercent').innerHTML = discountPercent.toFixed(2) + '%' + discountCalculation.toFixed(2);
+
+  document.getElementById('bid-amount').innerHTML = 'R$' + finalValue.toFixed(2);
+  document.getElementById('lastInstallment').innerHTML = 'R$' + lastInstallment.toFixed(2);
+
+  document.querySelector('#numberInstallments').innerHTML = numberOfInstallments;
+  document.getElementById('valueInstallments').innerHTML = 'R$' + installmentsValue;
 
   parseDate(dueDate);
   showResponse();
 };
 
-function finalValueCalculator(value, parcela) {
-
-  let calcNumberOfInstallments = value / parcela;
-  console.log(calcNumberOfInstallments);
-  let numberOfInstallments = Math.ceil(calcNumberOfInstallments);
-  let lastInstallment = value - (parcela * (numberOfInstallments - 1));
-
-  document.getElementById('bid-amount').innerHTML = 'R$' + value.toFixed(2);
-  document.getElementById('lastInstallment').innerHTML = 'R$' + lastInstallment.toFixed(2);
-
-  document.querySelector('#numberInstallments').innerHTML = numberOfInstallments;
-  document.getElementById('valueInstallments').innerHTML = 'R$' + parcela;
-
-}
 
 function parseDate(date) {
 
@@ -73,7 +74,6 @@ function dateValidator(date) {
 
 function showResponse() {
   const x = document.getElementsByClassName('div-hidden');
-
   x[0].classList.remove('div-hidden');
 }
 
