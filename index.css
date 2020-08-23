@@ -8,15 +8,25 @@
   background-color: #E63888;
 }
 
+#p-click {
+  padding-top: 20px;
+  cursor:pointer;
+  
+}
+
 .div-hidden {
   visibility:hidden;
-
 }
 
 ul, li {
   list-style-type: none;
   text-align: left;
   padding:0
+}
+
+#discountPercent {
+  color:#0c91f6;
+  font-weight: bold;
 }
 
 .button5 {

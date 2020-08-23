@@ -6,22 +6,20 @@ document.getElementById('totalDebtAmount').innerHTML = 'R$' + totalDebtAmount;
 function numberOfInstallments() {
 
   const dueDate = document.getElementById('firstDateInstallment').value;
-  dateValidator(dueDate)
   let installmentsValue = document.querySelector('#installments').value;
 
   let calcNumberOfInstallments = totalBidAmount / installmentsValue;
   let numberOfInstallments = Math.ceil(calcNumberOfInstallments);
-  console.log("numero de parcelas " + numberOfInstallments);
   let lastInstallment = totalBidAmount - (installmentsValue * (numberOfInstallments));
 
-  
+
   let finalValue = 0;
 
   if (numberOfInstallments == 1) {
     finalValue = totalBidAmount;
   } else if (numberOfInstallments >= 2 & numberOfInstallments <= 3) {
     finalValue = totalBidAmount * 1.115
-  } else if (numberOfInstallments >= 4 && numberOfInstallments <= 12) {
+  } else if (numberOfInstallments >= 4 & numberOfInstallments <= 12) {
     finalValue = totalBidAmount * 1.10
   } else if (numberOfInstallments >= 13 & numberOfInstallments <= 24) {
     finalValue = totalBidAmount * 1.075
@@ -36,7 +34,7 @@ function numberOfInstallments() {
   let discountCalculation = totalDebtAmount - finalValue;
   let discountPercent = (discountCalculation / totalDebtAmount) * 100;
 
-  document.getElementById('discountPercent').innerHTML = discountPercent.toFixed(2) + '%' + discountCalculation.toFixed(2);
+  document.getElementById('discountPercent').innerHTML = 'R$' + discountCalculation.toFixed(2) + ' ' + discountPercent.toFixed(2) + '%'
 
   document.getElementById('bid-amount').innerHTML = 'R$' + finalValue.toFixed(2);
   document.getElementById('lastInstallment').innerHTML = 'R$' + lastInstallment.toFixed(2);
@@ -61,21 +59,25 @@ function parseDate(date) {
   document.getElementById('dueDate').innerHTML = data;
 };
 
-
-function dateValidator(date) {
-  const selectDate = new Date(date);
-  const nowDate = Date.now();
-
-  if (selectDate < nowDate) {
-    alert('data invalida')
-  }
-};
-
-
 function showResponse() {
-  const x = document.getElementsByClassName('div-hidden');
-  x[0].classList.remove('div-hidden');
+  const hidden = document.getElementsByClassName('div-hidden');
+  hidden[0].classList.remove('div-hidden');
 }
 
+function buttonClick() {
+  const template = `
+    <div class= "d-flex justify-content-center">
+      <div class="alert alert-primary col-md-6 d-flex justify-content-center" role="alert">
+        Sua proposta foi enviada com sucesso!
+      </div>
+    </div>
+  `;
+
+  document.getElementById('btn').innerHTML = template
+
+  const menssager = document.getElementsByClassName('div-appear');
+  menssager[0].classList.add('div-hidden');
+
+}
 
 
