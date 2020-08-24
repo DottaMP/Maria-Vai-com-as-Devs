@@ -37,6 +37,8 @@ Com o objetivo de aumentar a quantidade de dívidas pagas e reduzir o número de
 
 [Veja o layout](https://www.loom.com/share/b0605132de0d4a50818ade0ca6a41e93)
 
+<a href="https://www.loom.com/share/a381daa50469424ab13470ac23b3475a"> <p>Serasa Pague Fácil - Watch Video</p> <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/a381daa50469424ab13470ac23b3475a-with-play.gif"> </a>
+
 
 ## 💻  Tecnologias
 
