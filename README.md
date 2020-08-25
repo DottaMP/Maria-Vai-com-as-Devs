@@ -15,7 +15,8 @@
 
 
 
-## :chart_with_downwards_trend: Projeto
+## :chart_with_downwards_trend: Projeto    
+###### Projeto realizado para a dinâmica do processo referente ao curso online e gratuito da Serasa do programa *Maria Vai Com as Devs*  que visa capacitar as mulheres para o mercado de TI.
 
 Com o objetivo de aumentar a quantidade de dívidas pagas e reduzir o número de consumidores endividados, criamos um pacote denominado Serasa Pague Fácil com funcionalidades que possibilitam e flexibiliza o pagamento das dívidas, mantendo-as em dia.O pacote de funcionalidades poderá ser integrado ao produto Serasa Limpa Nome, trazendo maior celeridade na baixa de dívidas junto ao Serasa.
 
