@@ -5,7 +5,6 @@
 
 <p align="center">
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tecnologias">Tecnologias</a>
 </p>
 
@@ -32,13 +31,6 @@ Com o objetivo de aumentar a quantidade de dívidas pagas e reduzir o número de
 1. Cliente poderá realizar cancelamento de acordos em até 7 dias; 
 2. Cliente poderá alterar a data de vencimento dos demais boletos; 
 3. Geração de boleto e baixa da dívida.
-
-
-## :black_nib: Layout
-
-[Veja o layout](https://www.loom.com/share/b0605132de0d4a50818ade0ca6a41e93)
-
-<a href="https://www.loom.com/share/a381daa50469424ab13470ac23b3475a"> <p>Serasa Pague Fácil - Watch Video</p> <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/a381daa50469424ab13470ac23b3475a-with-play.gif"> </a>
 
 
 ## 💻  Tecnologias
